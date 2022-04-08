@@ -1,0 +1,84 @@
+button {
+    background: indigo;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 5px;
+}
+.enviar {
+    margin: 5% 40% 0%;
+    text-align: center;
+}
+#usuarios{
+    margin-left: 120px;
+}
+svg.material-icons {
+    fill: white;
+    float: left;
+}
+.sign {
+    float: right;
+    margin: 5px 2px 5px 7px;
+}
+.error{
+    display: contents;
+    color: rgb(245, 25, 25);
+}
+#form{
+    width: 75%;
+    margin: 0 auto;
+}
+#form h1{
+    text-align: center;
+    color: indigo;
+    text-transform: uppercase;
+    font-family: system-ui;
+    text-decoration: underline;
+    background: floralwhite;
+    border-radius: 5px;
+}
+#form form{
+    background: white;
+    border-radius: 5px;
+    padding: 50px;
+    color:indigo;
+}
+input {
+    margin-left: 20px;
+    background: #4b00823b;
+    border: none;
+    border-radius: 3px;
+}
+#nombre{
+    margin-left: 91px;
+}
+#name_last {
+    margin-left: 81px;
+}
+#mail{
+    margin-left:100px;
+}
+#pass {
+    margin-left: 72px;
+}
+.card {
+    border: 3px solid indigo;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5%;
+    padding: 2%;
+}
+#sign{    
+    margin-left: 120px;
+}
+#name{
+    margin-left: 90px;
+}
+#last {
+    margin-left: 80px;
+}
+.boton{
+    margin-top: 5px;
+    text-align: center;
+}

@@ -1,3 +1,10 @@
+# Formulario de Usuarios (CRUD)
+Para este proyecto he necesitado de la documentación oficial de angular, typescript y javascript. Me ha resultado un poco compleja debido a que se necesitaba conocer algunos
+métodos y objetos en concreto de angular. He añadido una validación para comprobar que los datos introducidos son válidos. 
+
+
+
+
 # FormDAW
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.

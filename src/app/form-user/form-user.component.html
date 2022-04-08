@@ -1,0 +1,68 @@
+
+<div>{{ message }} </div>
+<button id="usuarios" (click)="setShow()">Ver usuarios</button>
+
+<div *ngIf="form" id="form">
+  <h1>Registrarse</h1>
+
+    <form [formGroup]="formulario" (ngSubmit)="setAddUser(name.value, name_last.value, email.value, pass.value,repeat_pass.value, $event)">
+        <label>Nombre:
+          <input type="text" #name formControlName="nombre" id="nombre" placeholder="Introduce tu nombre" required/>
+        </label>
+        <div class="error">
+          <span *ngIf="this.formulario.get('nombre')?.errors?.['required']">
+            (El nombre no puede quedar vacío)
+          </span>          
+        </div><br>
+        <label>Apellidos:
+          <input type="text" #name_last id="name_last" placeholder="Introduce tus apellidos"><br>
+        </label>
+        <label>E-mail:
+          <input type="text" #email formControlName="mail" id="mail" placeholder="Introduce un e-mail" required/>
+        </label>
+        <div class="error">
+          <span *ngIf="this.formulario.get('mail')?.errors?.['required']">
+            (El mail no puede quedar vacío)
+          </span>
+          <span *ngIf="this.formulario.get('mail')?.errors?.['email']">
+            (El mail no es válido)
+          </span>
+        </div><br>
+        <label>Contraseña:
+          <input type="password" #pass formControlName="pass" id="pass" placeholder="Contraseña" required/>
+        </label>
+        <div class="error">
+          <span *ngIf="this.formulario.get('pass')?.errors?.['required']">
+            (Te falta la contraseña)
+          </span>
+        <span *ngIf="this.formulario.get('pass')?.errors?.['minlength']">
+          (Debe tener como mínimo 8 caracteres)
+        </span>
+        </div><br>
+        <label>Repetir Contraseña:
+          <input type="password" #repeat_pass formControlName="repeat_pass" id="repeat" placeholder="Confirmar contraseña" required/>
+        </label>
+        <div class="error">
+          <span *ngIf="this.formulario.get('repeat_pass')?.errors?.['required']">
+            (Confirmar la contraseña)
+          </span>
+        <span *ngIf="!this.validate(pass.value, repeat_pass.value)">
+          (Deben coincidir)
+        </span>
+        </div><br>
+        <button class="enviar" type="submit"><svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><p class="sign">Registrar</p></button>
+      </form>
+      
+</div>
+<div id="datos" *ngIf="datos"> 
+  <div class="card" *ngFor="let user of users; let i = index">
+    <label> Nombre: <input #nombre id="name" value = {{user.name}} /> </label> <br>
+    <label>Apellidos: <input #apellido id="last" value = {{user.name_last}} /></label><br>
+    <label> Correo Electrónico: <input #correo value= {{user.email}} /></label><br>
+    <div class="boton">
+      <button (click)="setUser(i, nombre.value, apellido.value, correo.value)">Modificar usuario</button>
+      <button (click)="setDelete(i)">Eliminar usuario</button>
+  </div>
+  </div>
+  <button id="sign" (click)="setForm()"><svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><p class="sign">Registrar</p></button>
+</div>
