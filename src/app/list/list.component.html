@@ -1,0 +1,16 @@
+ <div class="card" >
+    Usuario: {{ id + 1}}<br>
+    <label> Nombre: <input #nombre id="name" value = {{user.name}} /> </label> <br>
+    <label>Apellidos: <input #apellido id="last" value = {{user.name_last}} /></label><br>
+    <label> Correo Electrónico: <input #correo value= {{user.email}} /></label><br>
+    <label> Profesión: <input #profession id="rol" value = {{user.profession}} /> </label> <br>
+    <div class="boton">
+      <button (click)="setUser(id, nombre.value, apellido.value, correo.value)">Modificar usuario</button>
+      <button (click)="deleteUser(id)">Eliminar usuario</button>
+      <button (click)="addProfession(profession.value, id)">Añadir profesión</button>
+      <button (click)="deleteProfession(id)">Eliminar profession</button>
+    </div>
+    <div *ngIf="!confirm">
+        <span id="confirm">{{ message }}</span>
+    </div>
+</div> 

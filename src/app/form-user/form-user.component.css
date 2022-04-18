@@ -1,11 +1,3 @@
-button {
-    background: indigo;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 15px;
-    margin: 5px;
-}
 .enviar {
     margin: 5% 40% 0%;
     text-align: center;
@@ -62,23 +54,7 @@ input {
 #pass {
     margin-left: 72px;
 }
-.card {
-    border: 3px solid indigo;
-    background-color: white;
-    border-radius: 5px;
-    margin: 5%;
-    padding: 2%;
-}
+
 #sign{    
     margin-left: 120px;
-}
-#name{
-    margin-left: 90px;
-}
-#last {
-    margin-left: 80px;
-}
-.boton{
-    margin-top: 5px;
-    text-align: center;
 }

@@ -1,26 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { MyServiceService } from '../my-service.service';
+import { User } from '../user.model';
 @Component({
   selector: 'app-form-user',
   templateUrl: './form-user.component.html',
   styleUrls: ['./form-user.component.css']
 })
 export class FormUserComponent implements OnInit {
-  users=[
-    {
-      "name":'Pepe',
-      "name_last":'Santana',
-      "email":'pepe@gmail.com',
-      "pass":'1'
-    },
-    {
-      "name":'Laura',
-      "name_last":'Quevedo',
-      "email":'quevedol@outlook.es',
-      "pass":'2'
-    }
-  ];
+  users:User[]=[];
 
   message:string='';
   form:boolean=true;
@@ -34,9 +22,9 @@ export class FormUserComponent implements OnInit {
     repeat_pass: new FormControl('', [Validators.required]),
   });
 
-  constructor() { }
-
+  constructor(private myServicio:MyServiceService) { }
   ngOnInit(): void {
+    this.users=this.myServicio.users;
   }
   /* ---------Mostrar usuarios---------*/
   setShow(){
@@ -48,26 +36,19 @@ export class FormUserComponent implements OnInit {
     this.datos=false;
     this.form=true;
   }
-  setUser(id:number, name:string, name_last:string, email:string){
-   this.users[id].name=name;
-   this.users[id].name_last=name_last;
-   this.users[id].email=email;
-  }
-  setDelete(id:number){
-    this.users=(id>0)?this.users.splice(id -1, 1): this.users.splice(id+1,1);
-  }
-
   setAddUser(name:string, name_last:string, email:string, pass:string, repeat_pass:string, event:Event){
     event.preventDefault();
     this.reset();
     if(this.formulario.valid && this.validate(pass,repeat_pass)){
-      this.users.push({ name: name, name_last: name_last, email:email, pass:pass});
+      let user = new User (name, name_last, email, pass, '');
+      this.myServicio.addUser(user);
       this.message = "¡Has registrado un usuario!";
       this.form=false;
       this.datos=true;
     } else {      
       this.message = "Hay datos inválidos";
     }
+    console.log(this.users);
   }
   private reset(){
     this.message='';
@@ -76,5 +57,5 @@ export class FormUserComponent implements OnInit {
   validate(pass:string, repeat_pass:string){
     return (pass.localeCompare(repeat_pass)===0)? true: false;
   }
-
+  
 }

@@ -2,3 +2,11 @@
 body {
     background: #d7efe9;
 }
+button {
+    background: indigo;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 5px;
+}
