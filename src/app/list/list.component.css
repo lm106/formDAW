@@ -1,3 +1,12 @@
+#usuario{
+    font-weight: bold;
+    border: 1px solid rgba(128, 128, 128, 0.684);
+    border-radius: 5px;
+    color: indigo;
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+}
 .boton{
     margin-top: 5px;
     text-align: center;
@@ -12,8 +21,11 @@
 #name{
     margin-left: 90px;
 }
-#last {
+.last {
     margin-left: 80px;
+}
+#mail{
+    margin-left: 20px;
 }
 #confirm{
     color:red;

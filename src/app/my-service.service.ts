@@ -19,12 +19,16 @@ export class MyServiceService {
     this.users.push(user);
   }
   setUser(id:number, name:string, name_last:string, email:string){
+    if(this.users[id].name===name && this.users[id].name_last===name_last && this.users[id].email===email) return false;
     this.users[id].name=name;
     this.users[id].name_last=name_last;
     this.users[id].email=email;
+    return true;
+    
   }
   deleteUser(id:number){    
     this.users.splice(id,1);
+    
   }
   deleteProfession(id:number){
     if (this.users[id].profession !== ''){

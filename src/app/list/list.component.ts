@@ -29,10 +29,12 @@ export class ListComponent implements OnInit {
   //   this.users[id].email=email;
   //  }
   setUser(id:number, name:string, name_last:string, email:string){
-    this.myServicio.setUser(id, name, name_last, email);
-    this.confirm=false;
-    this.message='¡Usuario modificado!';
-    console.log(this.message);
+    if(this.myServicio.setUser(id, name, name_last, email)) {
+      this.message='¡Usuario modificado!';
+    } else{
+      this.message='¡No se ha modificado el usuario!';
+    }
+    this.confirm=false;  
   }
    deleteUser(id:number){
      console.log(id + 'del metodo');

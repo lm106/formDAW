@@ -1,9 +1,9 @@
  <div class="card" >
-    Usuario: {{ id + 1}}<br>
+    <div id="usuario"> Usuario {{ id + 1}}</div><br>
     <label> Nombre: <input #nombre id="name" value = {{user.name}} /> </label> <br>
-    <label>Apellidos: <input #apellido id="last" value = {{user.name_last}} /></label><br>
-    <label> Correo Electrónico: <input #correo value= {{user.email}} /></label><br>
-    <label> Profesión: <input #profession id="rol" value = {{user.profession}} /> </label> <br>
+    <label>Apellidos: <input #apellido class="last" value = {{user.name_last}} /></label><br>
+    <label> Correo Electrónico: <input #correo id="mail"value= {{user.email}} /></label><br>
+    <label> Profesión: <input #profession class="last" value = {{user.profession}} /> </label> <br>
     <div class="boton">
       <button (click)="setUser(id, nombre.value, apellido.value, correo.value)">Modificar usuario</button>
       <button (click)="deleteUser(id)">Eliminar usuario</button>
