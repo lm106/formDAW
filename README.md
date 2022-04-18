@@ -1,6 +1,10 @@
-# Formulario de Usuarios (CRUD)
-Para este proyecto he necesitado de la documentación oficial de angular, typescript y javascript. Me ha resultado un poco compleja debido a que se necesitaba conocer algunos
-métodos y objetos en concreto de angular. He añadido una validación para comprobar que los datos introducidos son válidos. 
+# Formulario de Usuarios utilizando los servicios y gestionar información de componentes padres a hijos.
+
+Al igual que en la anterior entrega, he utilizado la documentación oficial de angular. He reutilizado este proyecto para esta
+entrega ya que la idea que tenía en mente era muy similiar a la anterior. En este proyecto, podemos 
+listar todos los usuarios exitentes utilizando componentes de padre a hijos (Componente for-user al componente list). Por otro 
+lado, se ha utilizado los servicios para añadir y eliminar una profesión, que por defecto está vacía, y modificar y eliminar
+los usuarios.
 
 
 
