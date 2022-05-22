@@ -17,17 +17,17 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
   addProfession(profession:string, id:number){
-    // let i= parseInt(id);
+    /* let i= parseInt(id);*/
     console.log('dentro de profesion');
     this.myServicio.addProfession(profession, id);
     this.confirm=false;
     this.message='¡Profesión añadida!';
   }
-  // setUser(id:number, name:string, name_last:string, email:string){
+  /* setUser(id:number, name:string, name_last:string, email:string){
   //   this.users[id].name=name;
   //   this.users[id].name_last=name_last;
   //   this.users[id].email=email;
-  //  }
+    }*/
   setUser(id:number, name:string, name_last:string, email:string){
     if(this.myServicio.setUser(id, name, name_last, email)) {
       this.message='¡Usuario modificado!';
