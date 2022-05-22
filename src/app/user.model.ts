@@ -12,6 +12,5 @@ export class User {
         if(profession !=''){
             this.profession=profession;
         }
-        
     }
 }
